@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>THE FLOORE CUSTOMERS</title>
+
+</head>
+
+<body>
+  <h1 data-position="header">The list of existing customers</h1>
+
+  <h2>Customers</h2>
+
+  <ul class="customers">
+    <% for(var i=0; i < customers.length; i++) {%>
+      <li class="customer">
+        <a href="customers/" + <%= customers[i].number %> ><span><%= customers[i].name %></span></a>
+      </li>
+      <% } %>
+  </ul>
+
+  <script src="/main.js"></script>
+</body>
+
+</html>
