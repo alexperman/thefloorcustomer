@@ -2,7 +2,12 @@
 // main.js
 const update = document.querySelector('#update-button')
 const deleteButton = document.querySelector('#delete-button')
-const messageDiv = document.querySelector('#message')
+const newButton = document.querySelector('#new-button')
+
+newButton.addEventListener('click', _ => {
+    window.location('/customers/new')
+})
+
 
 update.addEventListener('click', _ => {
   fetch('/customers', {
@@ -35,11 +40,7 @@ deleteButton.addEventListener('click', _ => {
       if (res.ok) return res.json()
     })
     .then(response => {
-      if (response === 'No quote to delete') {
-        messageDiv.textContent = 'No Darth Vadar quote to delete'
-      } else {
-        window.location.reload(true)
-      }
+      
     })
     .catch(console.error)
 })

@@ -4,6 +4,7 @@ const { MongoClient } = require('mongodb');
 const uri = "mongodb+srv://alexperman:koza2020@cluster0.yqqke.mongodb.net/thefloor?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
+
 router.get("/", (req, res) => {
   client.connect(err => {
     if (err) return console.error(err)
@@ -17,6 +18,10 @@ router.get("/", (req, res) => {
       .catch(/* ... */);
   });
 });
+
+router.get('/new', (req, res) => {
+  res.render('details.ejs');
+})
 
 router.post("/customers", (req, res) => {
   client.connect(err => {
